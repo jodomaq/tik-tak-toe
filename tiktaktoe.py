@@ -44,7 +44,7 @@ def position(num):
 def EnterMove(board):
     while True:
         try:    
-            mov = int(input("ingresa tu movimiento: "))
+            mov = int(input("Select a board's position: "))
             vacios = MakeListOfFreeFields(board)
             #print(vacios)
             if position(mov) in vacios:
@@ -53,10 +53,10 @@ def EnterMove(board):
                 board[x][y] = "O"
                 break
             else:
-                print("Posición ocupada, ingresa otro número.")
+                print("Wrong position, select another.")
                 continue
         except e as Exception:
-            print("ingresa un número del 1 al 9", e)
+            print("Input a number from 1 to 9", e)
             continue
     return 0
     # La función acepta el estado actual del tablero y pregunta al usuario acerca de su movimiento, 
@@ -109,7 +109,7 @@ def DrawMove(board):
             else:
                 continue
         except e as Exception:
-            print("Error desconocido:", e)
+            print("Unknown error:", e)
             break
     return 0
     # La función realiza el movimiento de la máquina y actualiza el tablero.
@@ -126,7 +126,7 @@ while True:
         juega_jugador = False
         if VictoryFor(board,"O"):
             DisplayBoard(board)
-            print("Ganaste! :)")
+            print("You win! :)")
             break
     else:
         DrawMove(board)
