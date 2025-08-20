@@ -121,6 +121,10 @@ juega_jugador = True
 
 while True:
     DisplayBoard(board)
+    if len(MakeListOfFreeFields(board)) == 0:
+        print("Draw!")
+        break
+    
     if juega_jugador:
         EnterMove(board)
         juega_jugador = False
